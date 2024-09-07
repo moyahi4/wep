@@ -10,6 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: whitesmoke;
+    font-family: Arial, sans-serif;
 }
 
 .wrapper {
@@ -17,6 +18,10 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -56,5 +61,34 @@ button.yes-btn {
 button.no-btn {
     background: white;
     color: #e94d58;
-    position: absolute;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .gif {
+        max-width: 200px;
+    }
+
+    .btn-group {
+        margin-top: 30px;
+    }
+
+    button {
+        width: 100%; /* الأزرار ستصبح أعرض على الهواتف */
+        font-size: 1.1em; /* تكبير الخط للأزرار */
+    }
+
+    button.no-btn {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+    }
 }
