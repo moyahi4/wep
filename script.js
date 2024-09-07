@@ -26,4 +26,21 @@ function isOverlapping(btn1, btn2) {
 noBtn.addEventListener("mouseover", () => {
   const wrapper = document.querySelector(".wrapper");
   const wrapperRect = wrapper.getBoundingClientRect();
-  const no
+  const noBtnRect = noBtn.getBoundingClientRect();
+  const yesBtnRect = yesBtn.getBoundingClientRect();
+
+  // Calculate max positions to ensure the button stays within the wrapper
+  const maxX = wrapperRect.width - noBtnRect.width;
+  const maxY = wrapperRect.height - noBtnRect.height;
+
+  let randomX, randomY;
+
+  do {
+    randomX = Math.floor(Math.random() * maxX);
+    randomY = Math.floor(Math.random() * maxY);
+
+    // Update the button's position
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+  } while (isOverlapping(yesBtn, noBtn)); // Check if the buttons overlap
+});
